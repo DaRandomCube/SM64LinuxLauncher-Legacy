@@ -22,7 +22,7 @@ A launcher for the Super Mario 64 PC Port.
 If you should encounter errors while using the application, there may be an uninstalled dependency. Use the following commands to install all depends:
 
 Debian-Based Distros:
-`sudo apt install python3 python3-pip libsdl2-dev gcc-mips-linux-gnu make`
+`sudo apt install python3 python3-pip python3-tk libsdl2-dev gcc-mips-linux-gnu make`
 `pip3 install pysimplegui`
 `pip3 install tk`
 
