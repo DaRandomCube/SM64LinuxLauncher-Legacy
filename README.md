@@ -4,6 +4,7 @@ A launcher for the Super Mario 64 PC Port.
 ![screenshot](https://cdn.discordapp.com/attachments/775908791417700363/996196405708329030/Screenshot_from_2022-07-11_18-28-18.png?size=4096)
 
 ## GNU/Linux installation
+### Using the Install Script
 1. Install git if you have not already:
  * `sudo apt-get install git` on Debian/Ubuntu based systems,
  * `sudo pacman install git` on arch based systems, or
@@ -16,6 +17,18 @@ A launcher for the Super Mario 64 PC Port.
 4. Run the setup.sh file by double-clicking it or running `python3 setup.py` in your terminal. Enter your password, and the script will install depedencies for both SM64LL and SM64 PC Port, and finall place the SM64LinuxLauncher directory in your `home/username` folder.
 
 5. Open the directory in the terminal or file explorer, if you open it in terminal run `python3 launcher.py`. If you run it from your file explorer, just double-click it.
+
+### Manually Installing Dependencies
+If you should encounter errors while using the application, there may be an uninstalled dependency. Use the following commands to install all depends:
+
+Debian-Based Distros:
+`sudo apt install python3 python3-pip libsdl2-dev gcc-mips-linux-gnu make`
+`pip3 install pysimplegui`
+`pip3 install tk`
+
+Arch-Based Distros/SteamOS:
+
+TBW, i know nothing about arch nor steamos 😿.
 
 ## Supported Distros
 
