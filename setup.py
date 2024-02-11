@@ -41,6 +41,7 @@ def setup() -> None:
         # return to top
 
     pip_main(['install', '-U', 'pysimplegui']) # run pip from within python
+    pip_main(['install', '-U', 'tk']) 
     shutil.copytree("./src", f"{os.environ['HOME']}/SM64LinuxLauncher") # copy into home folder
 
 if __name__ == "__main__":
