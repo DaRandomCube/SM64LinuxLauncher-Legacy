@@ -13,7 +13,7 @@ A launcher for the Super Mario 64 PC Port.
 
 3. Run this command just in case `chmod +x setup.py && ./setup.py`.
 
-4. Run the setup.sh file by double-clicking it or running `./setup.py`, the SM64LL directory will be in your `home/username` folder.
+4. Run the setup.sh file by double-clicking it or running `python3 setup.py` in your terminal. Enter your password, and the script will install depedencies for both SM64LL and SM64 PC Port, and finall place the SM64LinuxLauncher directory in your `home/username` folder.
 
 5. Open the directory in the terminal or file explorer, if you open it in terminal run `python3 launcher.py`. If you run it from your file explorer, just double-click it.
 
@@ -51,8 +51,8 @@ If you want a shortcut to the laucher, you can do this by making a file called `
 
 ```
 [Desktop Entry]
-Name=SM64 launcher  
+Name=SM64LinuxLauncher  
 Type=Application
-Exec=path/into/sm64pclauncher/launcher.py
+Exec=path/into/sm64linuxlauncher/launcher.py
 Categories=Game;  
 ```
