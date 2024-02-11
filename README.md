@@ -11,7 +11,7 @@ A launcher for the Super Mario 64 PC Port.
 2. Clone the repo using this command:
 `git clone https://github.com/Bloxxel64/SM64LinuxLauncher`.
 
-3. Run this command just in case `chmod +x setup.py && ./setup.py`.
+3. Run this command to ensure the file can be executed: `chmod +x setup.py`.
 
 4. Run the setup.sh file by double-clicking it or running `python3 setup.py` in your terminal. Enter your password, and the script will install depedencies for both SM64LL and SM64 PC Port, and finall place the SM64LinuxLauncher directory in your `home/username` folder.
 
