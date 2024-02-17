@@ -24,6 +24,8 @@ def build():
         [sg.Text("Select a Repository. (If you do not select a valid repo, the builder will automaticaly default to sm64ex-nightly).", text_color=textColor, background_color=windowBackgroundColor)],
         [sg.Combo(['sm64ex-nightly',
                    'sm64ex-master',
+                   'sm64coopdx',
+                   'sm64coopdx-dev,
                    'sm64ex-coop',
                    'Render96ex-master',
                    'Render96ex-tester',
@@ -73,46 +75,80 @@ def build():
                 case 'sm64ex-nightly':
                     repolink = 'https://github.com/sm64pc/sm64ex'
                     branchname = 'nightly'
+                    if repofolder == "":
+                        repofolder = 'sm64ex'
 
                 case 'sm64ex-master':
                     repolink = 'https://github.com/sm64pc/sm64ex'
                     branchname = 'master'
+                    if repofolder == "":
+                        repofolder = 'sm64ex'
 
                 case 'Render96ex-master':
                     repolink = 'https://github.com/Render96/Render96ex/'
                     branchname = 'master'
+                    if repofolder == "":
+                        repofolder = 'Render96ex'
 
                 case 'Render96ex-tester':
                     repolink = 'https://github.com/Render96/Render96ex'
                     branchname = "tester"
+                    if repofolder == "":
+                        repofolder = 'Render96ex'
 
                 case 'Render96ex-tester_rt64alpha':
                     repolink = 'https://github.com/Render96/Render96ex'
                     branchname = "tester_rt64alpha"
+                    if repofolder == "":
+                        repofolder = 'Render96ex'
 
                 case 'Saturn':
                     repolink = 'https://github.com/Llennpie/Saturn'
                     branchname = 'legacy'
+                    if repofolder == "":
+                        repofolder = 'Saturn'
 
                 case 'Saturn: Moon Edition':
                     repolink = 'https://github.com/Llennpie/Saturn'
                     branchname = 'moon'
+                    if repofolder == "":
+                        repofolder = 'Saturn'
 
                 case 'SM64Plus (Very Slightly Buggy)':
                     repolink = 'https://github.com/MorsGames/sm64plus'
                     branchname = 'master'
+                    if repofolder == "":
+                        repofolder = 'sm64plus'
 
                 case 'sm64ex-alo':
                     repolink = 'https://github.com/AloXado320/sm64ex-alo'
                     branchname = 'master'
+                    if repofolder == "":
+                        repofolder = 'sm64ex-alo'
 
                 case 'sm64ex-coop':
                     repolink = 'https://github.com/djoslin0/sm64ex-coop'
                     branchname = 'coop'
+                    if repofolder == "":
+                        repofolder = 'sm64ex-coop'
+                        
+                case 'sm64coopdx':
+                    repolink = 'https://github.com/coop-deluxe/sm64coopdx'
+                    branchname = 'master'
+                    if repofolder == "":
+                        repofolder = 'sm64coopdx'
+                        
+                case 'sm64coopdx-dev':
+                    repolink = 'https://github.com/coop-deluxe/sm64coopdx'
+                    branchname = 'dev'
+                    if repofolder == "":
+                        repofolder = 'sm64coopdx-dev'
 
                 case other:
                     repolink = 'https://github.com/sm64pc/sm64ex'
-                    branchname = 'nightly' 
+                    branchname = 'nightly'
+                    if repofolder == "":
+                        repofolder = 'sm64ex'
 
             window = sg.Window('Downloading', downloading)
             
@@ -145,7 +181,7 @@ def build():
                             while True:
                                 event, values = window.read(1)
                                 if os.name == 'posix':
-                                    subprocess.run(f"cp {baseromfolder} {repofolder}/baserom.{romregion}.z64", shell=True) # copy the baserom 
+                                    subprocess.run(f"sudo cp {baseromfolder} {repofolder}/baserom.{romregion}.z64", shell=True) # copy the baserom 
                                     subprocess.run(f"cd {repofolder} && make {buildflags} VERSION={romregion}", shell=True) # run make
                                     subprocess.run(f"cp -r {texturepack}/gfx {repofolder}/build/{romregion}_pc/res", shell=True) # copy the texture pack
 

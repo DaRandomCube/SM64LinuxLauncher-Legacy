@@ -48,9 +48,12 @@ def main():
 
         event, values = window.read()
         buildselected = os.path.join(
-                values['buildlist'][0] # load the builds
+            values['buildlist'][0] # load the builds
         )
 
+        if event == 'Build':
+            import builder
+            builder.build()
         if event == 'buildlist':
             buildselected = buildselected.rstrip("\n")
             if buildselected == "":
@@ -62,17 +65,15 @@ def main():
             if os.name == 'posix':
                 subprocess.run(f"cd {buildfolder}/build/{region}_pc/", shell=True)
                 subprocess.run(f"/sm64.{region}.f3dex2e")       
-
-        if event == 'Build':
-            import builder
-            builder.build()
         if event == sg.WIN_CLOSED:
             exit()
 
 if __name__ == "__main__":
     try:
         main()
-    except TypeError: # make it shut up about an empty build list
+    except IndexError: # make it shut up about an empty build list
+        import builder
+        builder.build()
         pass
 
         
