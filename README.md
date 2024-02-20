@@ -21,10 +21,10 @@ A launcher for the Super Mario 64 PC Port.
 ### Manually Installing Dependencies
 If you should encounter errors while using the application, there may be an uninstalled dependency. Use the following commands to install all depends:
 
-Debian-Based Distros:
-`sudo apt install python3 python3-pip python3-tk libsdl2-dev gcc-mips-linux-gnu make`
-`pip3 install pysimplegui`
-`pip3 install tk`
+Debian-Based Distros:  
+`sudo apt install python3 python3-pip python3-tk libsdl2-dev gcc-mips-linux-gnu make`  
+`pip3 install pysimplegui`  
+`pip3 install tk`  
 
 Arch-Based Distros/SteamOS:
 
@@ -41,13 +41,12 @@ This repo is focused on Linux. yould be better off using SM64Builder2 or SM64NXB
 ## Usage
 ### Running on Linux
 
-type in terminal `python3 launcher.py` (you must be in launcher directory) or  
-doubleclick `launcher.py`
+Type `python3 launcher.py` into your terminal (you must be in the root launcher directory), or doubleclick `launcher.py`.
 
 ### Using it
 
-To build sm64, press "Build"  
-To play, select existing build and click "Play"  
+To build a new instance of sm64pc, press "Build".
+To play an existing build, select a build from the buildlist and click "Play".
 
 ## How to build
 
@@ -59,7 +58,7 @@ To play, select existing build and click "Play"
 * Specify the build flags, you can find which build flags are avaible for your repo by checking the makefile or checking your repo's wiki if it exists. Optionally, you can add a `-j` argument to set how many simoultaneous build jobs can be done at one time. The guideline is one job for one core and 2GB of ram. Example: `-j4` for a quad-core processor with 8GB of RAM.
 * Click "Build". Now wait patiently for the build to finish. When it finishes, game should lauch shortly after. If you see a text box and the game does not launch for like 2 minutes, it means that your build failed. delete the repo folder and try to build again. If the game launches, it is ok. When you restart the launcher, it should show the new build on the list.
 
-### Protip
+### Launcher Shortcut
 If you want a shortcut to the laucher, you can do this by making a file called `sm64launcher.desktop` in `/home/username/.local/share/applications/` containing the following:  
 
 ```
